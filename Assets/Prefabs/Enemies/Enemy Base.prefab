@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4323036678708255440}
   - component: {fileID: 8766596753131803179}
   - component: {fileID: 4080166076209477777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,9 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyspeed: 6
-  enemyCurrentHealth: 0
-  enemyDamage: 0
-  enemySize: 0
   enemyTarget: {fileID: 0}
   rotationSpeed: 50
 --- !u!114 &4080166076209477777
@@ -154,7 +151,7 @@ GameObject:
   - component: {fileID: 5071712720765844273}
   - component: {fileID: 7837567400499689148}
   - component: {fileID: 6737214362527647273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}

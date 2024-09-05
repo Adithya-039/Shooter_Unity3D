@@ -7,7 +7,7 @@ public class HealthAndDamage : MonoBehaviour
     public float health = 100f;
     public float damage = 10f;
 
-    public void AcceptDamge(float incomingDamage)
+    public void AcceptDamage(float incomingDamage)
     {
         health = health - incomingDamage;
 
