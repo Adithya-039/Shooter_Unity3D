@@ -74,7 +74,7 @@ public class BaseBulletBehavior : MonoBehaviour
                 Debug.Log("Hit a Wall");
 
                 // Draws a magenta debug ray in the Scene view to visualize the hit
-                Debug.DrawRay(transform.position, direction, Color.magenta, 2f);
+                Debug.DrawRay(transform.position, direction, Color.red, 2f);
 
                 // Destroys the bullet game object
                 Destroy(gameObject);

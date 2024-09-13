@@ -8,17 +8,57 @@ public class HealthAndDamage : MonoBehaviour
     public float health = 100f;
     public float damage = 10f;
 
-    delegate void DamageTakenDelegate(float _incomingDamage);
+    private PlayerMovement movementComponent;
+    private PlayerUI uiComponent;
 
-    DamageTakenDelegate delegate_DamageTaken;
+    //public delegate void Del_OneFloatParameter (float damageTaken);
+    //public Del_OneFloatParameter del_DamageTaken;
 
-    private void Start()
+    private void Awake()
     {
-        delegate_DamageTaken = AcceptDamage;
+        movementComponent = GetComponent<PlayerMovement>();
+        if (movementComponent != null)
+        {
+            Debug.Log("OnPlayer");
+            uiComponent = GetComponent<PlayerUI>();
+        }
+        else
+        {
+            Debug.Log("On Enemy");
+        }
     }
+
+    public void AcceptDamage()
+    {
+        health -= damage;
+        if (movementComponent != null)
+        {
+            movementComponent.PlayerMovementDamageTakenSignal(damage);
+        }
+
+        if (uiComponent != null)
+        {
+            uiComponent.UpdateHealthBar(GetHealthRatio());
+        }
+
+        if (health < 0)
+        {
+            Death();
+        }
+    }
+
     public void AcceptDamage(float incomingDamage)
     {
-        health = health - incomingDamage;
+        health -= incomingDamage;
+        if(movementComponent!= null)
+        {
+            movementComponent.PlayerMovementDamageTakenSignal(incomingDamage);
+        }
+
+        if(uiComponent != null)
+        {
+            uiComponent.UpdateHealthBar(GetHealthRatio());
+        }
 
         if (health < 0)
         {
