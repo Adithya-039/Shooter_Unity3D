@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lookingValues = Vector2.zero;
 
     public GameObject bulletPrefab;
-    public float frameDistance = 100f;
+    public float PlayerSpeed = 100f;
 
     private HealthAndDamage hdComponent;
 
@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public float shootingCooldownTimer = 0.5f;
 
     public static PlayerMovement Instance;
+
+    public float xp;
 
     public void IAAccelerate(InputAction.CallbackContext context)
     {
@@ -41,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if(Instance == null && Instance != this)
         {
             Instance = this;
         }
-        hdComponent = gameObject.GetComponent<HealthAndDamage>();
+        hdComponent = GetComponent<HealthAndDamage>();
     }
 
     void FixedUpdate()
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         // The reason I'm using this method is because transform.translate moves the player relative to its position and rotation.
         // This method moves the player relative to its position and does not take rotation into account
         // I find this method to be better during gameplay
-        transform.position += new Vector3(movementValues.x * frameDistance * Time.deltaTime, 0, movementValues.y * frameDistance * Time.deltaTime);
+        transform.position += new Vector3(movementValues.x * PlayerSpeed * Time.deltaTime, 0, movementValues.y * PlayerSpeed * Time.deltaTime);
 
         // Check where the mouse is pointing
         ProjectMouseToWorld();

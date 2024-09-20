@@ -4823,6 +4823,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4327885424912610743, guid: c4e886dd679e127449a6c5b203aeafaa, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327885424912610743, guid: c4e886dd679e127449a6c5b203aeafaa, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327885424912610743, guid: c4e886dd679e127449a6c5b203aeafaa, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4327885424912610743, guid: c4e886dd679e127449a6c5b203aeafaa, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4644530393156623627, guid: c4e886dd679e127449a6c5b203aeafaa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

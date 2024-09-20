@@ -31,4 +31,9 @@ public class EnemyBase : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
+
+    private void OnDestroy()
+    {
+        //Instantiate(xpobject, transform.position, transform.rotation); 
+    }
 }

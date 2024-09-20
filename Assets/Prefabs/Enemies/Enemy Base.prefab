@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8766596753131803179}
   - component: {fileID: 4080166076209477777}
   - component: {fileID: -251546062036497970}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Enemy Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7b43c11ea1f17459d1c76d73875b85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCooldown: 3
+  canAttack: 1
 --- !u!1 &6928027222913564547
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ GameObject:
   - component: {fileID: 5071712720765844273}
   - component: {fileID: 7837567400499689148}
   - component: {fileID: 6737214362527647273}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
